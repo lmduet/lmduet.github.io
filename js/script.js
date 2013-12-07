@@ -1,22 +1,19 @@
 (function() {
-    var rand = Math.random();
-    if (rand < 0.3) {
-        document['pic'].src = 'img/1.jpg';
-    } else if (rand < 0.6) {
-        document['pic'].src = 'img/2.jpg';
-    };
-    document['pic'].classList.remove("hide");
+
 
     document.addEventListener('DOMContentLoaded', function() {
-        toggler = document.getElementById("sect-toggle");
+
+        var toggler = document.getElementById("sect-toggle"),
+            home = document.getElementById('home'),
+            concerts = document.getElementById('concerts'),
+            switcher = document.getElementById('switch');
+
         toggler.onclick = function toggle() {
-            var home = document.getElementById('home'),
-                concerts = document.getElementById('concerts'),
-                switcher = document.getElementById('switch');
 
             switcher.classList.add("hide");
 
             setTimeout(function() {
+
                 if(toggler.innerHTML === "Concerts") {
                     toggler.innerHTML = "Accueil";
                     home.style.display = "none";
@@ -26,7 +23,9 @@
                     home.style.display = "block";
                     concerts.style.display = "none";
                 }
+
                 switcher.classList.remove("hide");
+
             }, 500);
 
         }
