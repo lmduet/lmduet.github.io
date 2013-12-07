@@ -29,24 +29,26 @@
             }, 500);
 
         }
+
     })
 
+    var srcRegexp = /^.*img\/(\d).jpg$/i
+
     function changeImage() {
-        var img = document.getElementById("pic");
+        var img = document.getElementById("pic"),
+            curidx, nextidx;
         img.classList.add("hide");
         setTimeout(function(){
-            img.src = "img/" + x + ".jpg";
-            x++;
-            if(x >= 5){
-                x = 0;
-            }
+            curidx = parseInt(img.src.match(srcRegexp)[1])
+            nextidx = curidx === 4 ? 0 : curidx + 1;
+            img.src = "img/" + nextidx + ".jpg";
             img.classList.remove("hide");
         }, 500);
     }
 
-    var x = 1;
+    window.setInterval(changeImage, 6000);
 
-    setInterval(changeImage, 6000);
+    document.getElementById("pic").onclick = changeImage;
 
 
 }).call(this);
