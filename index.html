@@ -8,12 +8,12 @@
   </head>
   <body>
     <div class="grid center layout-fixed">
-      <div class="grid2">
+      <div class="grid2" id="content">
         <div class="head">
           <h1>LM Duet</h1>
           <caps>Jazz | Paris</caps>
         </div>
-        <div class="content">
+        <div id="switch" class="toggle">
           <div id="home">
             <div class="about">
               <p>
@@ -34,16 +34,21 @@
             </div>
           </div>
           <div id="concerts">
-            <h2>BLAH</h2>
+            <h3>Concerts</h3><br>
+            <p>
+              <strong>Samedi 21 Décembre</strong><br>
+              Librairie <a href="http://lesoiseaux-rares.fr/">Les Oiseaux rares</a><br>
+              <small>19h30, entrée libre</small>
+            </p>
           </div>
         </div>
         <div>
-          <!-- <button id="sect-toggle">Concerts</button> -->
+          <button id="sect-toggle">Concerts</button>
         </div>
       </div>
-      <div class="grid2">
+      <div class="grid2" id="images">
         <div class="pic">
-          <img src="img/1.jpg" alt="LM Duet Jazz Paris" name="pic">
+          <img src="img/0.jpg" alt="LM Duet Jazz Paris" name="pic" id="pic" class="toggle hide">
         </div>
       </div>
       <div class="grid2">
