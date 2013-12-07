@@ -17,6 +17,10 @@
     height: 750px;
 }
 
+#preload {
+    display: none;
+}
+
 .hide {
     opacity: 0;
 }
