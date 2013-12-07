@@ -46,9 +46,12 @@
         }, 500);
     }
 
-    window.setInterval(changeImage, 6000);
+    var interval = window.setInterval(changeImage, 6000);
 
-    document.getElementById("pic").onclick = changeImage;
+    document.getElementById("pic").onclick = function() {
+        window.clearInterval(interval);
+        changeImage();
+    };
 
 
 }).call(this);
