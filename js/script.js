@@ -48,10 +48,6 @@
 
     var interval = window.setInterval(changeImage, 6000);
 
-    document.getElementById("pic").onclick = function() {
-        window.clearInterval(interval);
-        changeImage();
-    };
-
+    document.getElementById("pic").onclick = changeImage;
 
 }).call(this);
