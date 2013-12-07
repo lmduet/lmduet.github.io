@@ -37,7 +37,7 @@
         setTimeout(function(){
             img.src = "img/" + x + ".jpg";
             x++;
-            if(x >= 4){
+            if(x >= 5){
                 x = 0;
             }
             img.classList.remove("hide");
