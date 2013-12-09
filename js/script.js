@@ -40,7 +40,7 @@
         img.classList.add("hide");
         setTimeout(function(){
             curidx = parseInt(img.src.match(srcRegexp)[1])
-            nextidx = curidx === 4 ? 0 : curidx + 1;
+            nextidx = curidx === 4 ? 1 : curidx + 1;
             img.src = "img/" + nextidx + ".jpg";
             img.classList.remove("hide");
         }, 500);
