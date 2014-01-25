@@ -1,53 +1,38 @@
-(function() {
+
+$(document).ready(function() {
+
+    var srcRegexp = /^.*img\/(\d).jpg$/i;
 
 
-    document.addEventListener('DOMContentLoaded', function() {
+    $("#desktop-switch-tab").click(function(event) {
+        var el = $(this),
+            images = $("#images"),
+            concerts = $("#concerts");
 
-        var toggler = document.getElementById("sect-toggle"),
-            home = document.getElementById('home'),
-            concerts = document.getElementById('concerts'),
-            switcher = document.getElementById('switch');
-
-        toggler.onclick = function toggle() {
-
-            switcher.classList.add("hide");
-
-            setTimeout(function() {
-
-                if(toggler.innerHTML === "Concerts") {
-                    toggler.innerHTML = "Accueil";
-                    home.style.display = "none";
-                    concerts.style.display = "block";
-                } else {
-                    toggler.innerHTML = "Concerts";
-                    home.style.display = "block";
-                    concerts.style.display = "none";
-                }
-
-                switcher.classList.remove("hide");
-
-            }, 500);
-
+        if (images.is(":visible")) {
+            images.hide(function() {
+                el.text("Voir les images");
+                concerts.show();
+            });
+        } else {
+            concerts.hide(function() {
+                el.text("Voir tous les concerts");
+                images.show();
+            });
         }
+    });
 
-    })
+    window.setInterval(function () {
 
-    var srcRegexp = /^.*img\/(\d).jpg$/i
+        var img = $("#desktop-cur-img");
+            curIdx = parseInt(img.attr("src").match(srcRegexp)[1]),
+            nextIdx = isNaN(curIdx) || curIdx ===  4 ? 2 : ++curIdx;
+        img.fadeOut(function() {
+            img.attr("src", "img/" + nextIdx + ".jpg");
+            img.load(function() {
+                img.fadeIn();
+            })
+        })
+    }, 6000);
 
-    function changeImage() {
-        var img = document.getElementById("pic"),
-            curidx, nextidx;
-        img.classList.add("hide");
-        setTimeout(function(){
-            curidx = parseInt(img.src.match(srcRegexp)[1])
-            nextidx = curidx === 4 ? 1 : curidx + 1;
-            img.src = "img/" + nextidx + ".jpg";
-            img.classList.remove("hide");
-        }, 500);
-    }
-
-    var interval = window.setInterval(changeImage, 6000);
-
-    document.getElementById("pic").onclick = changeImage;
-
-}).call(this);
+})

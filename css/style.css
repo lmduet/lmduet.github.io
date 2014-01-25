@@ -1,39 +1,32 @@
-#sect-toggle {
-    margin: 5px 10px 5px 10px;
-    padding: 5px 10px 5px 10px;
+
+img {
+    margin-top: 21px;
 }
 
-#concerts {
-    height: 440px;
-    display: none;
-}
-
-#home {
-    height: 440px;
-    display: block;
-}
-
-#content, #images{
-    height: 750px;
-}
-
-#images {
+.pres-copy {
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 #preload {
     display: none;
 }
 
-.hide {
-    opacity: 0;
+.vertmargin {
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
-.toggle {
-    -webkit-transition: opacity .5s ease-in-out;
-    -moz-transition: opacity .5s ease-in-out;
-    -ms-transition: opacity .5s ease-in-out;
-    -o-transition: opacity .5s ease-in-out;
-    transition: opacity .5s ease-in-out;
+.desktop-content {
+    margin-top: 20px;
 }
 
+.concert-item {
+    width: 550px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#concerts {
+    display: none;
+}
