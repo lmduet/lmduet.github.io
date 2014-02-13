@@ -28,6 +28,6 @@ img {
 
 #concerts {
     display: none;
-    height: 700px;
-    overflow: scroll;
+    height: 730px;
+    overflow-y: scroll;
 }
