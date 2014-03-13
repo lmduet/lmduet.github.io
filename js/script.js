@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-    var srcRegexp = /^.*img\/(\d).jpg$/i;
+    var srcRegexp = /^.*img\/_(\d).jpeg$/i;
 
 
     $("#desktop-switch-tab").click(function(event) {
@@ -26,9 +26,9 @@ $(document).ready(function() {
 
         var img = $("#desktop-cur-img");
             curIdx = parseInt(img.attr("src").match(srcRegexp)[1]),
-            nextIdx = isNaN(curIdx) || curIdx ===  4 ? 2 : ++curIdx;
+            nextIdx = isNaN(curIdx) || curIdx ===  5 ? 2 : ++curIdx;
         img.fadeOut(function() {
-            img.attr("src", "img/" + nextIdx + ".jpg");
+            img.attr("src", "img/_" + nextIdx + ".jpeg");
             img.load(function() {
                 img.fadeIn();
             })
