@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
 
-    var srcRegexp = /^.*img\/_(\d).jpeg$/i;
+    var srcRegexp = /^.*img\/(\d).jpeg$/i;
 
 
     $("#desktop-switch-tab").click(function(event) {
@@ -28,7 +28,7 @@ $(document).ready(function() {
             curIdx = parseInt(img.attr("src").match(srcRegexp)[1]),
             nextIdx = isNaN(curIdx) || curIdx ===  5 ? 2 : ++curIdx;
         img.fadeOut(function() {
-            img.attr("src", "img/_" + nextIdx + ".jpeg");
+            img.attr("src", "img/" + nextIdx + ".jpeg");
             img.load(function() {
                 img.fadeIn();
             })
